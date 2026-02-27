@@ -32,4 +32,16 @@ public class EncounterResult {
     public List<String> getBattleLog() {
         return Collections.unmodifiableList(battleLog);
     }
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("=== Battle Result ===\n");
+        sb.append("Winner: ").append(winner != null ? winner : "Not determined").append("\n");
+        sb.append("Rounds fought: ").append(rounds).append("\n");
+        sb.append("Battle log:\n");
+        for (String line : battleLog) {
+            sb.append("  ").append(line).append("\n");
+        }
+        return sb.toString();
+    }
 }
